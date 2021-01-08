@@ -58,7 +58,7 @@
 </head>
 <body>
     <div class="toggle-switch">
-        <span class="toggle-switch__switch js-toggle-switch" tabindex="0" role="switch">
+        <span class="toggle-switch__switch js-toggle-switch" tabindex="0" role="switch" aria-label="Use dark mode" aria-checked="false">
             <span class="toggle-switch__knob"></span>
         </span>
         <div>
@@ -84,6 +84,10 @@
             // Modifies status contents
             switchIsActive = !switchIsActive;
             switchStatus.innerHTML = switchIsActive ? 'on' : 'off';
+
+            // Flip `aria-checked` so assistive technology knows the state has changed
+            toggler.setAttribute('aria-checked', switchIsActive);
+
         }
 
         // Adds keyboard events to the toggle
