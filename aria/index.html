@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aria</title>
+    <style>
+        .toggle-switch {
+            
+        }
+        
+        .toggle-switch__switch {
+            transition: all 0.2s ease-in;
+            height: 90px;
+            width: 165px;
+            display: inline-block;
+            background-color: #333333;
+            margin: 6px;
+            margin-bottom: 15px;
+            border-radius: 90px;
+            cursor: pointer;
+            text-align: left;
+        }
+        
+        .toggle-switch__knob {
+            transition: all 0.2s ease-in;
+            width: 84px;
+            height: 78px;
+            display: inline-block;
+            background-color: #ffffff;
+            border-radius: 78px;
+            margin: 6px 9px;
+        }
+        
+        .toggle-switch__status {
+
+        }
+
+
+        /* State */
+        .toggle-switch__switch.is-active {
+            background-color: #f31455;
+        }
+
+        .toggle-switch__switch.is-active  .toggle-switch__knob {
+            margin-left: 72px;
+        }
+        
+        /* Focus styles */
+        .toggle-switch__switch:focus {
+            outline: none;
+        }
+
+        .toggle-switch__switch:focus .toggle-switch__knob {
+            box-shadow: 0px 0px 5px 5px #229abf;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-switch">
+        <span class="toggle-switch__switch js-toggle-switch" tabindex="0">
+            <span class="toggle-switch__knob"></span>
+        </span>
+        <div>
+            Dark mode is <span class="toggle-switch__status js-status">off</span>
+        </div>
+    </div>
+
+    <script>
+
+        const toggler = document.querySelector('.js-toggle-switch');
+        const switchStatus = document.querySelector('.js-status');
+
+        let switchIsActive = false;
+
+        // called whenever you click on the toggle
+        function handleClick() {
+            // Causes page to alternate between light and dark mode
+            document.body.classList.toggle('is-dark-mode');
+
+            // Causes the toggle to change appearance
+            toggler.classList.toggle('is-active');
+
+            // Modifies status contents
+            switchIsActive = !switchIsActive;
+            switchStatus.innerHTML = switchIsActive ? 'on' : 'off';
+        }
+
+        // Adds keyboard events to the toggle
+        toggler.addEventListener('keydown', function (event) {
+            if (event.key === ' ') {
+                // Prevents unintentional form submissions, page scrolls, the like
+		        event.preventDefault();
+
+                handleClick()
+            }
+        });
+
+
+        toggler.onclick = handleClick;
+
+    </script>
+</body>
+</html>
