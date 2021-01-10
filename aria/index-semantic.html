@@ -4,8 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aria with Semantic Element</title>
+    
 </head>
 <body>
-    
+    <div class="toggle-switch">
+        <label>
+            <span class="visually-hidden">
+                Use dark mode
+            </span>
+            <input type="checkbox" class="visually-hidden" />
+            <span class="toggle-switch__switch js-toggle-switch">
+                <span class="toggle-switch__knob"></span>
+            </span>
+        </label>
+        
+        <p>
+            Dark mode is <span class="toggle-switch__status js-status">off</span>
+        </p>
+    </div>
 </body>
 </html>
