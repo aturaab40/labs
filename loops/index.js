@@ -60,3 +60,26 @@ for (let i = 0; i < ages.length; i++) {
         console.log((iNum * jNum));
     }
 }
+
+
+
+
+/* 
+To let us call continue or break on the outer loop from inside the inner loop, we need to apply a label to the outer loop. The label goes right before the for statement. Then, we can use the label with the continue statement. Notice how the results change once we add the label.
+*/
+const ages = [1, 4, 7, 30, 33];
+
+outerLoop: for (let i = 0; i < ages.length; i++) {
+    const iNum = ages[i];
+    
+    for (let j = 0; j < ages.length; j++) {
+        const jNum = ages[j];
+
+        if ((iNum * jNum) % 2 === 0) {
+            // This continues the inner loop if the number is even
+            continue outerLoop; 
+        }
+        
+        console.log((iNum * jNum));
+    }
+}
