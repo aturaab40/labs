@@ -33,3 +33,30 @@ for (let index = 0; index < 11; index++) {
 
     console.log(index);
 }
+
+
+
+/* 
+These two statements work great for individual loops, but what if we needed to coordinate nested loops? 
+*/
+
+
+/* 
+If we just used break or continue inside the inner loop, it wouldn’t be able to stop or skip the outer loop.
+*/
+const ages = [1, 4, 7, 30, 33];
+
+for (let i = 0; i < ages.length; i++) {
+    const iNum = ages[i];
+    
+    for (let j = 0; j < ages.length; j++) {
+        const jNum = ages[j];
+
+        if ((iNum * jNum) % 2 === 0) {
+            // This continues the inner loop if the number is even
+            continue; 
+        }
+        
+        console.log((iNum * jNum));
+    }
+}
