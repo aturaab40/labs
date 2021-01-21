@@ -1,0 +1,266 @@
+/**
+ * Set the global `box-sizing` state to `border-box`.
+ *
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ * paulirish.com/2012/box-sizing-border-box-ftw
+ */
+ html {
+    box-sizing: border-box;
+}
+  
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+  
+
+/**
+ * remove all margins and paddings from certain elements.
+ */
+ body,
+ h1, h2,
+ p, 
+ dl, dd, ol, ul {
+    margin:  0;
+    padding: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.5;
+    color: black;
+    background-color: #fff;
+}
+
+img {
+    max-width: 100%;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+
+/* the components styles */
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    resize: both;
+}
+
+.card {
+    background-color: #fbfaff;
+}
+
+
+/* card header */
+.card__header {
+    position: relative;
+    padding: 1.5rem 3rem;
+}
+
+    .card__title {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+
+    .card__title span {
+        display: block;
+    }
+
+    .card__title span:first-child {
+        color: #933939;
+    }
+    .card__title span:last-child {
+        color: #031b33;
+    }
+
+    .card__meta {
+        margin-top: 0.75rem;
+        display: block;
+    }
+
+    .card__time {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        border: 2px solid #eee;
+        border-radius: 5px;
+        padding: 5px;
+        color: #031b33;
+        background-color: #fff;
+    }
+
+
+  
+
+
+
+
+
+
+
+
+/* card body */
+.card__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    /* grid-auto-rows: 460px; */
+    grid-auto-flow: dense;
+    padding: 3rem;
+
+
+    
+}
+
+    .card__category {
+        position: relative;
+        border-radius: 7.5px;
+        padding: 1rem;
+        color: #fff;
+        box-shadow: 0 10px 15px -8px rgba(11, 11, 12, 0.3);
+    }
+
+        .card__category--active-cases {
+            background-color: #02254d;
+        }
+        .card__category--new-cases {
+            background-color: #0285d3;
+        }
+        .card__category--new-tests {
+            background-color: #f18d14;
+        }
+        .card__category--total-confirmed {
+            background-color: #fff;
+            color: black;
+            grid-row: span 2;
+        }
+        .card__category--recovered {
+            background-color: #159dc1;
+        }
+        .card__category--deaths {
+            background-color: #d22a29;
+        }
+
+            .card__stats {
+
+            }
+
+            .card__stats dt {
+                font-size: 3rem;
+            }
+
+            .card__stats dt span {
+                display: block;
+            }
+
+            .card__stats dd {
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+            
+            .card__stats-icon {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+/* card footer */
+.card__footer {
+    padding: 1.5rem 3rem;
+    border-top: 5px solid #eee;
+    background-color: #fefefe;
+}
+
+
+
+
+/* objects */
+.media {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.media__img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem;
+    width: 150px;
+    text-align: center;
+}
+
+.media__img img {
+    width: 80px;
+}
+
+.media__img small {
+    margin-top: 1rem;
+}
+
+.media__text {
+    flex: 1;
+    border-left: 5px solid #eee;
+    padding-left: 1.5rem;
+}
+
+.media__text span {
+    display: block;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.media__text span:first-child {
+    color: #4690ae;
+}
+
+.media__text span:last-child {
+    color: #031b33;
+}
+
+
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.socials li {
+    padding-right: 1rem;
+}
+
+
+
+
+
+/* utilities */
+.u-small-text {
+    font-size: 1rem;
+}
