@@ -1,0 +1,153 @@
+/**
+ * Set the global `box-sizing` state to `border-box`.
+ *
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ * paulirish.com/2012/box-sizing-border-box-ftw
+ */
+ html {
+    box-sizing: border-box;
+}
+  
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+/* Reset */
+figure,
+p,
+blockquote,
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+
+/* Base */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    background-color: #f5f5f5;
+    color: hsl(234, 12%, 34%);
+
+}
+
+
+
+/* Section */
+.sec {
+    max-width: 1440px;
+    padding: 6rem 16px;
+    margin: auto;
+}
+
+.sec__header {
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+}
+
+.sec__title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: hsl(229, 6%, 66%);
+  
+}
+
+.sec__sub-title {
+    font-size: 1.5rem;
+    color: hsl(234, 12%, 34%);
+    margin-bottom: 1.5rem ;
+}
+
+
+
+
+
+/* cards */
+.cards {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 4rem !important;
+}
+
+.card {
+    
+    background-color: #fff;
+    box-shadow: 0 10px 15px -8px rgba(11, 11, 12, 0.3);
+    padding: 2rem;
+    min-height: 300px;
+    position: relative;
+    border-radius: 5px;
+    border-top: 5px solid;
+}
+
+.card p {
+    font-size: 1.2rem;
+}
+
+.card__title {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+    color: hsl(234, 12%, 34%);
+}
+
+.card__img {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+}
+
+/* modifiers */
+.card--supervisor { border-top-color: hsl(180, 62%, 55%); }
+.card--team { border-top-color: hsl(0, 78%, 62%); }
+.card--karma { border-top-color: hsl(34, 97%, 64%); }
+.card--calculator { border-top-color: hsl(212, 86%, 64%); }
+
+
+
+/* utilities */
+.u-reset-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+
+
+
+
+
+/* MQs */
+@media (min-width: 1280px) {
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card:nth-child(1) {
+        grid-row: 2;
+        grid-column: 1;
+        top: -150px;
+    }
+    .card:nth-child(2) {
+        grid-row: 1;
+        grid-column: 2;
+    }
+    .card:nth-child(3) {
+        grid-row: 2;
+        grid-column: 2;
+    }
+    .card:nth-child(4) {
+        grid-row: 2;
+        grid-column: 3;
+        top: -150px;
+    }
+
+
+}
